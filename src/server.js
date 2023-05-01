@@ -10,7 +10,8 @@ app.use(
 );
 app.get("/api/v1/all", (req, res) => {
   console.log("estamos escuchando", data);
-  res.json(JSON.stringify(data));
+  /*  res.json(JSON.stringify(data)); */
+  res.json({ data });
 });
 
 app.get("/", (req, res) => {
