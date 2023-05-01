@@ -1,0 +1,25 @@
+{
+  "name": "loremdylan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dylanToJson": "node src/webscraping/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primerproyecto/loremDylan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/primerproyecto/loremDylan/issues"
+  },
+  "homepage": "https://github.com/primerproyecto/loremDylan#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0",
+    "nodemon": "^2.0.22",
+    "puppeteer": "^19.11.1"
+  }
+}
