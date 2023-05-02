@@ -19,7 +19,7 @@ const puppeteer = require("puppeteer");
   await page.waitForSelector("#item-list");
 
   const songLinks = await page.$$eval(".song a", (links) =>
-    links.map((link) => link.href)
+    links.map((link) => link.href).slice(0, 3)
   );
 
   const lyrics = [];

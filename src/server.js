@@ -13,9 +13,11 @@ app.use(
     origin: "*",
   })
 );
+app.use(express.json());
 app.get("/api/v1/all", (req, res) => {
   /*  res.json(JSON.stringify(data)); */
-  res.json({ "Choo Choo": "Welcome to your Express app 🚅" });
+  /* res.json({ "Choo Choo": "Welcome to your Express app 🚅" }); */
+  res.json([data]);
 });
 
 app.get("/", (req, res) => {
