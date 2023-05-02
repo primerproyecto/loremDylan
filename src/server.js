@@ -5,7 +5,7 @@ const path = require("path");
 
 const data = require("../data/bobDylanSongs.json");
 
-const filteredData = data.slice(0, 2);
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(
@@ -14,17 +14,22 @@ app.use(
   })
 );
 app.use(express.json());
+
+/* TO GET ALL SONGS FROM JSON FILE */
 app.get("/api/v1/all", (req, res) => {
-  /*  res.json(JSON.stringify(data)); */
-  /* res.json({ "Choo Choo": "Welcome to your Express app 🚅" }); */
   res.json([data]);
+});
+/* TO GET 10 SONGS FROM JSON FILE */
+app.get("/api/v1/10", (req, res) => {
+  const filteredData = data.slice(0, 10);
+  res.json([filteredData]);
 });
 
 app.get("/", (req, res) => {
   /* res.json({ titulo: "cancion" }); */
   res.sendFile(path.resolve(__dirname, "index.html"));
 });
-const port = process.env.PORT || 3000;
+
 app.listen(port, () => {
   console.log(`loremDylan app listening on port ${port}`);
 });
