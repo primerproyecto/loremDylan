@@ -19,7 +19,7 @@ const puppeteer = require("puppeteer");
   await page.waitForSelector("#item-list");
 
   const songLinks = await page.$$eval(".song a", (links) =>
-    links.map((link) => link.href).slice(0, 3)
+    links.map((link) => link.href)
   );
 
   const lyrics = [];
@@ -33,17 +33,25 @@ const puppeteer = require("puppeteer");
       title.textContent.trim()
     );
     const text = await page.$eval(".article-content", (content) =>
-      content.innerHTML.trim()
+      content.innerHTML.replace(
+        /(<br>|<br\/>|\t|\n|<\/p>|<p class=\"copytext\">|Copyright ©|by Special Rider Music|)/gi,
+        ""
+      )
     );
 
     const imagen = await page.$eval(".photo img", (content) => content.src);
 
+    const albumUrl = await page.$$eval(".block-link-song-reference", (links) =>
+      links.map((link) => link.href)
+    );
+
     try {
-      if (text.length > 20 && title !== null) {
+      if (text.length > 100 && title !== null) {
         lyrics.push({
           song: title,
           lyrics: text,
           cover: imagen,
+          album: albumUrl[0],
         });
       }
     } catch (error) {

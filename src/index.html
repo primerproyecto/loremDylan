@@ -4,20 +4,98 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>loremDylan</title>
+    <title>APIDylan</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bob_Dylan_in_November_1963-4.jpg/800px-Bob_Dylan_in_November_1963-4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+      }
+      .wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      a,
+      a:visited {
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h1>lorem Dylan</h1>
-    <ul>
-      <li>
-        Todas las canciones del dylan
-        <code>https://loremdylan-production.up.railway.app/api/v1/all</code>
-      </li>
-      <li>
-        10 canciones del dylan
-        <code>https://loremdylan-production.up.railway.app/api/v1/10</code>
-      </li>
-    </ul>
-    <p></p>
+    <div class="wrapper">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1>APIDylan</h1>
+        <a href="https://github.com/primerproyecto/loremDylan" target="_blank"
+          >github</a
+        >
+      </div>
+      <p>
+        Some <strong>endpoints</strong> to recieved some dylan's song in
+        ```json``` format.
+      </p>
+      <p>
+        <pre>
+        <code>
+          fetch('https://loremdylan-production.up.railway.app/api/v1/all')
+            .then(response => response.json())
+            .then(json => console.log(json))
+        </code>
+      </pre>
+      </p>
+      <ul>
+        <li>
+          <h2>All dylan's songs</h2>
+          <pre>
+            <code>
+              fetch('https://loremdylan-production.up.railway.app/api/v1/all')
+                .then(response => response.json())
+                .then(data => console.log(data))
+            </code>
+          </pre>
+        </li>
+        <li>
+          <h2>10 songs from bobdylan</h2>
+          <pre>
+            <code>
+              fetch('https://loremdylan-production.up.railway.app/api/v1/10')
+                .then(response => response.json())
+                .then(data => console.log(data))
+            </code>
+          </pre>
+        </li>
+        <li>
+          <h2>All dylan's song paginated</h2>
+          <pre>
+            <code>
+              fetch('https://loremdylan-production.up.railway.app/api/v1/10')
+                .then(response => response.json())
+                .then(data => console.log(data))
+            </code>
+          </pre>
+        </li>
+        <li>
+          <h2>One random dylan's sentence</h2>
+          <pre>
+            <code>
+              fetch('https://loremdylan-production.up.railway.app/api/v1/sentence')
+                .then(response => response.json())
+                .then(data => console.log(data))
+            </code>
+          </pre>
+        </li>
+      </ul>
+      <p></p>
+    </div>
   </body>
 </html>
