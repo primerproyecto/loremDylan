@@ -16,9 +16,12 @@ app.use(
 );
 app.use(express.json());
 
+// Establecer la carpeta estática para los archivos públicos
+app.use(express.static(path.join(__dirname, "public")));
+
 /* TO GET ALL SONGS FROM JSON FILE */
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 /* TO GET ALL SONGS FROM JSON FILE */
@@ -28,24 +31,6 @@ app.get("/api/v1/all", (req, res) => {
 
 /* TO GET ALL SONGS PAGINATED FROM JSON FILE */
 app.get("/api/v1/paginated", (req, res) => {
-  /* const itemsPerPage = 20; // número de elementos por página
-  res.json({
-    count: data.length,
-    pages: Math.floor(data.length / itemsPerPage),
-    prev:
-      req.query.page == 1 || data.length < itemsPerPage
-        ? null
-        : "https://loremdylan-production.up.railway.app/api/v1/paginated/?=" +
-          (parseInt(req.query.page) - 1),
-
-    next:
-      req.query.page == Math.floor(data.length / itemsPerPage) ||
-      data.length < itemsPerPage
-        ? null
-        : "https://loremdylan-production.up.railway.app/api/v1/paginated/?=" +
-          (parseInt(req.query.page) + 1),
-    data,
-  }); */
   const itemsPerPage = 10; // número de elementos por página
   const array = data; // array original
   const pageNumber = parseInt(req.query.page) || 1; // página actual (por defecto es la primera página)

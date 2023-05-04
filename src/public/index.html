@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" type="text/css">
+  </link>
+  <title>🪕 apiDylan</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrapper">
+      <div style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        ">
+        <h1>apiDylan</h1>
+        <a href="https://github.com/primerproyecto/loremDylan" target="_blank">github</a>
+      </div>
+  </header>
+  <main>
+    <div class="wrapper">
+      <p>
+        While learning to webdeveloping, I missed some "old-school" content to diplay on the UI. I got tyred of <a href="https://rickandmortyapi.com/" target="_blank"> rickymorty</a> and <a href="https://pokeapi.co/" target="_blank"> pokeapi.</a></p>
+
+<p>Don't get me wrong but those cartoons make no sense to me, I'am on my early fifties and I'll rather work with some other value content to display on the screen while learning how to work with api rest.</p>
+
+<p>No bussiness (apart from bobdylan's bussiness) could be generated with these endpoints. Fell free to use these endpoints for learning purposes and give support to <a href="https://www.bobdylan.com/" target="_blank"> dylan.</a></p>
+
+<p>In all returned data items, there's a link to the official <a href="https://www.bobdylan.com/" target="_blank">bobdylan.com webpage</a> that you could use to give extra infomation about the item as giving bob dylan all the credit that he deserves.
+      </p>
+      <ul>
+        <li>
+          <h2>All dylan's songs</h2>
+          <pre>
+            <code>
+fetch('https://apidylan.up.railway.app/api/v1/all')
+  .then(response => response.json())
+  .then(data => console.log(data))
+            </code>
+          </pre>
+        </li>
+        <li>
+          <h2>All dylan's song paginated</h2>
+          <pre>
+            <code>
+fetch('https://apidylan.up.railway.app/api/v1/paginated?page=2')
+  .then(response => response.json())
+  .then(data => console.log(data))
+            </code>
+          </pre>
+        </li>
+        <li>
+          <h2>One random dylan's sentence</h2>
+          <pre>
+            <code>
+fetch('https://apidylan.up.railway.app/api/v1/sentence')
+  .then(response => response.json())
+  .then(data => console.log(data))
+            </code>
+          </pre>
+        </li>
+      </ul>
+    </div>
+  </main>
+  </div>
+</body>
+
+</html>

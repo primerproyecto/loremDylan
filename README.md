@@ -1,29 +1,28 @@
 ![bob dylan](https://www.bobdylan.com/wp-content/themes/icon-bobdylan/img/bob-dylan-title-small.png)
 
 
-# loremDylan
+# apiDylan
 
-Proyecto abierto a colaboraciones.
-Endpoint para desarroyadores web que están cansados de pokemons y de rickymortyes
+While learning to webdeveloping, I missed some "old-school" content to diplay on the UI. I got tyred of [rickymorty](https://rickandmortyapi.com/) and [pokeapi](https://pokeapi.co/).
 
-Nos devolverá una respuesta en formato json con un array de objetos que contiene todas las canciones del maestro bobdylan que tiene en su web.
-Un array de objetos con las siguientes propiedades:
+Don't get me wrong but those cartoons make no sense to me, I'am on my early fifties and I'll rather work with some other value content to display on the screen while learning how to work with api rest.
 
-```
-song: 'Título de la canción',
-lyrics: 'Texto en inglés'
-cover: 'url de la portada del disco en el que fue publicado',
-album: 'url a la página oficial de bobDylan donde poder ampliar información sobre la canción e incluso comprarla en mayor beneficio del maestro dylan.
-```
+No bussiness (apart from bobdylan's bussiness) could be generated with these endpoints. Fell free to use these endpoints for learning purposes and give support to bob dylan.
 
-## endpoints
+In all returned data items, there's a link to the official bobdylan.com webpage that you could use to give extra infomation about the item as giving bob dylan all the credit that he deserves.
 
-En su versión primera esta api cuenta con los siguientes endopoints del tipo get. Por ahora sólamente se pueden leer el fichero.
+## Endpoints
 
-### Todas las canciones sin paginar.
+This first version of the apidylan provides 3 different endpoints:
+
+1. All dylan songs (around 490 songs).
+2. All dylan's songs paginated by 10 items.
+3. Random bob dylan's sentence.
+
+### All dylan songs (around 490 songs)
 
 `````
-https://loremdylan-production.up.railway.app/api/v1/all
+https://apidylan.up.railway.app/api/v1/all
 `````
 
 This will return an object with the full data.
@@ -50,7 +49,7 @@ This will return an object with the full data.
 ### All dylan's songs paginated by 10 items.
 
 ```
-https://loremdylan-production.up.railway.app/api/v1/paginated?page=2
+https://apidylan.up.railway.app/api/v1/paginated?page=2
 
 ```
 This will return a json object with the following props in order to be able to paginate it with ease: ```count``` : number of items of the data array, ```current``` : current page we are browser in, ```pages``` : number of pages, ```prevPage``` : url to get previous page, ```nextPage``` : url to get next page.
@@ -59,8 +58,8 @@ This will return a json object with the following props in order to be able to p
 	"count": 489,
 	"current": 2,
 	"pages": 49,
-	"prevPage": "https://loremdylan-production.up.railway.app/api/v1/paginated?page=1",
-	"nextPage": "https://loremdylan-production.up.railway.app/api/v1/paginated?page=3",
+	"prevPage": "https://apidylan.up.railway.app/api/v1/paginated?page=1",
+	"nextPage": "https://apidylan.up.railway.app/api/v1/paginated?page=3",
 	"data": [
 		{
 			"song": "Ain’t No More Cane",
@@ -128,11 +127,11 @@ This will return a json object with the following props in order to be able to p
 ```
 
 
-### Randon bob dylan's sentence
+### Random bob dylan's sentence
 
 
 `````
-https://loremdylan-production.up.railway.app/api/v1/sentence
+https://apidylan.up.railway.app/api/v1/sentence
 `````
 This will return a random object with the following props every time we hit that url.
 
@@ -147,8 +146,9 @@ This will return a random object with the following props every time we hit that
 
 ## Webscraping
 
-Esta api está construída desde los datos que se encuentran en el fichero ```data/bobDylanSongs.json```.
+To get the dylan's raw data I did some webscraping on bob dylan's official website at [www.bobdylan.com](https://www.bobdylan.com/).
 
-Si se quiere actualizar el fichero se puede desde la consola y con el comando ```npm run dylanToJson``` nos generará un archivo en formato ```json``` con las canciones de bobDylan en la carpeta data de este respositorio.
+If you run ```npm run dylanToJson``` on the console you could get updated content from [bobdylan songs page](https://www.bobdylan.com/songs/). This command will store the data in a json file inside ```data``` folder.
+
 
 ![lista de canicones](songsPage.png)
