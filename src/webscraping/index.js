@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const { v4: uuid } = require("uuid");
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -42,7 +43,7 @@ const puppeteer = require("puppeteer");
     const imagen = await page.$eval(".photo img", (content) => content.src);
 
     const albumUrl = await page.$$eval(".block-link-song-reference", (links) =>
-      links.map((link) => link.href)
+      links.map((link) => link.href).slice(0, 2)
     );
 
     try {
@@ -52,6 +53,7 @@ const puppeteer = require("puppeteer");
           lyrics: text,
           cover: imagen,
           album: albumUrl[0],
+          id: uuid(),
         });
       }
     } catch (error) {

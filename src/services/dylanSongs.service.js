@@ -51,12 +51,13 @@ const getOneDylanSentence = () => {
   const frase = dylanSongModel.getDylanData()[randomNumber].lyrics;
   const song = dylanSongModel.getDylanData()[randomNumber].song;
   const album = dylanSongModel.getDylanData()[randomNumber].album;
+  const id = dylanSongModel.getDylanData()[randomNumber].id;
 
   const words = frase.split(" ");
   const slicedWords = words.slice(0, 20);
   const sentence =
     slicedWords.join(" ").replace(/(<br>|<br\/>|\n)/gi, " ") + " ...";
-  return { sentence, song, album };
+  return { sentence, song, album, id };
 };
 
 module.exports = {
