@@ -61,7 +61,10 @@ const puppeteer = require("puppeteer");
 
   const fs = require("fs");
 
-  fs.writeFileSync("data/bobDylanSongs.json", JSON.stringify(lyrics, null, 2));
+  fs.writeFileSync(
+    "src/data/bobDylanSongs.json",
+    JSON.stringify(lyrics, null, 2)
+  );
 
   await browser.close();
 })();
