@@ -1,0 +1,70 @@
+<%- include('partials/header.ejs') %>
+<body>
+  <%- include('partials/navigation.ejs') %>
+  <main class="container">
+    <div class="wrapper">
+      <p>
+        While learning to webdeveloping, I missed some "old-school" content to
+        diplay on the UI. I got tyred of
+        <a href="https://rickandmortyapi.com/" target="_blank"> rickymorty</a>
+        and <a href="https://pokeapi.co/" target="_blank"> pokeapi.</a>
+      </p>
+
+      <p>
+        Don't get me wrong but those cartoons make no sense to me, I'am on my
+        early fifties and I'll rather work with some other value content to
+        display on the screen while learning how to work with api rest.
+      </p>
+
+      <p>
+        No bussiness (apart from bobdylan's bussiness) could be generated with
+        these endpoints. Fell free to use these endpoints for learning purposes
+        and give support to
+        <a href="https://www.bobdylan.com/" target="_blank"> dylan.</a>
+      </p>
+
+      <p>
+        In all returned data items, there's a link to the official
+        <a href="https://www.bobdylan.com/" target="_blank"
+          >bobdylan.com webpage</a
+        >
+        that you could use to give extra infomation about the item as giving bob
+        dylan all the credit that he deserves.
+      </p>
+      <ul>
+        <li>
+          <h2>All dylan's songs</h2>
+          <pre>
+                <code>
+    fetch('https://loremdylan-production.up.railway.app/all')
+      .then(response => response.json())
+      .then(data => console.log(data))
+                </code>
+              </pre>
+        </li>
+        <li>
+          <h2>All dylan's song paginated</h2>
+          <pre>
+                <code>
+    fetch('https://loremdylan-production.up.railway.app/paginated?page=2')
+      .then(response => response.json())
+      .then(data => console.log(data))
+                </code>
+              </pre>
+        </li>
+        <li>
+          <h2>One random dylan's sentence</h2>
+          <pre>
+                <code>
+    fetch('https://loremdylan-production.up.railway.app/sentence')
+      .then(response => response.json())
+      .then(data => console.log(data))
+                </code>
+              </pre>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,14 @@
+<% for (let i = 0; i < data.length; i++) { %>
+<div class="card col-sm">
+  <a target="_blank" href="<%- data[i].album %>"
+    ><img
+      class="img-fluid card-img-top"
+      src="<%= data[i].cover %>"
+      alt="Card image cap"
+  /></a>
+  <div class="card-body">
+    <h5 class="card-title"><%= data[i].song %></h5>
+    <p class="card-text"><%= data[i].lyrics %></p>
+  </div>
+</div>
+<% } %>

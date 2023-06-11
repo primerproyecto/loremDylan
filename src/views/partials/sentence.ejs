@@ -1,0 +1,17 @@
+<section>
+  <main class="mt-5">
+    <h2>Get one random bob dylan's liryc</h2>
+    <pre>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('<strong>//loremdylan-production.up.railway.app/api/v1/sentence</strong>')
+              .then(response => response.json())
+              .then(data => {
+                console.log(data);
+              })
+              .catch(error => {
+                console.error(error);
+              });
+          });
+    </pre>
+  </main>
+</section>
