@@ -22,7 +22,7 @@ This first version of the apidylan provides 3 different endpoints:
 ### All dylan songs (around 490 songs)
 
 `````
-https://apidylan.up.railway.app/api/v1/all
+https://loremdylan-production.up.railway.app/api/v1/all
 `````
 
 This will return an object with the full data.
@@ -51,7 +51,7 @@ This will return an object with the full data.
 ### All dylan's songs paginated by 10 items.
 
 ```
-https://apidylan.up.railway.app/api/v1/paginated?page=2
+https://loremdylan-production.up.railway.app/api/v1/paginated?page=2
 
 ```
 This will return a json object with the following props in order to be able to paginate it with ease: ```count``` : number of items of the data array, ```current``` : current page we are browser in, ```pages``` : number of pages, ```prevPage``` : url to get previous page, ```nextPage``` : url to get next page.
@@ -143,7 +143,7 @@ This will return a json object with the following props in order to be able to p
 
 
 `````
-https://apidylan.up.railway.app/api/v1/sentence
+https://loremdylan-production.up.railway.app/api/v1/sentence
 `````
 This will return a random object with the following props every time we hit that url.
 

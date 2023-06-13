@@ -36,7 +36,7 @@
           <h2>All dylan's songs</h2>
           <pre>
                 <code>
-    fetch('https://loremdylan-production.up.railway.app/all')
+    fetch('https://loremdylan-production.up.railway.app/api/v1/all')
       .then(response => response.json())
       .then(data => console.log(data))
                 </code>
@@ -46,7 +46,7 @@
           <h2>All dylan's song paginated</h2>
           <pre>
                 <code>
-    fetch('https://loremdylan-production.up.railway.app/paginated?page=2')
+    fetch('https://loremdylan-production.up.railway.app/api/v1/paginated?page=2')
       .then(response => response.json())
       .then(data => console.log(data))
                 </code>
@@ -56,7 +56,7 @@
           <h2>One random dylan's sentence</h2>
           <pre>
                 <code>
-    fetch('https://loremdylan-production.up.railway.app/sentence')
+    fetch('https://loremdylan-production.up.railway.app/api/v1/sentence')
       .then(response => response.json())
       .then(data => console.log(data))
                 </code>
