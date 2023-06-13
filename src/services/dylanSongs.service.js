@@ -56,7 +56,7 @@ const getOneDylanSentence = () => {
   const words = frase.split(" ");
   const slicedWords = words.slice(0, 20);
   const sentence =
-    slicedWords.join(" ").replace(/(<br>|<br\/>|\n)/gi, " ") + " ...";
+    slicedWords.join(" ").replace(/(\n|<br\/>|\n)/gi, " ") + " ...";
   return { sentence, song, album, id };
 };
 
