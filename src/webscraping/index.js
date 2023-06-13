@@ -33,11 +33,9 @@ const { v4: uuid } = require("uuid");
     const title = await page.$eval(".headline", (title) =>
       title.textContent.trim()
     );
-    const text = await page.$eval(".article-content", (content) =>
-      content.innerHTML.replace(
-        /(<br>|<br\/>|\t|\n|<\/p>|<p class=\"copytext\">|Copyright ©|by Special Rider Music|)/gi,
-        ""
-      )
+    const text = await page.$eval(
+      ".article-content",
+      (content) => content.innerHTML
     );
 
     const imagen = await page.$eval(".photo img", (content) => content.src);
