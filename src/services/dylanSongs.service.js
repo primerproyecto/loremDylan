@@ -60,8 +60,14 @@ const getOneDylanSentence = () => {
   return { sentence, song, album, id };
 };
 
+const getOneDylanSong = () => {
+  const oneDylanSong = dylanSongModel.getDylanData();
+  return oneDylanSong;
+};
+
 module.exports = {
   getAllDylanSongs,
   getAllDylanSongsPaginated,
   getOneDylanSentence,
+  getOneDylanSong,
 };

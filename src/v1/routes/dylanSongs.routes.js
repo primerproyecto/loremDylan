@@ -9,6 +9,7 @@ router
   })
   .get("/all", bobDylanController.getAllDylanSongs)
   .get("/paginated", bobDylanController.getAllDylanSongsPaginated)
-  .get("/sentence", bobDylanController.getOneDylanSentence);
+  .get("/sentence", bobDylanController.getOneDylanSentence)
+  .get("/all/:id", bobDylanController.getOneDylanSong);
 
 module.exports = router;

@@ -26,6 +26,10 @@ app.get("/sentence", async function (req, res) {
   const data = dylanSongs;
   res.render("sentence", { data });
 });
+app.get("/all/:id", async function (req, res) {
+  const data = dylanSongs;
+  res.render("oneDylanSong", { data });
+});
 
 app.use(express.json());
 app.use("/api/v1/", v1DylanSongsRoutes);

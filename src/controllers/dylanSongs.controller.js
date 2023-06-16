@@ -20,8 +20,17 @@ const getOneDylanSentence = (req, res) => {
   res.json(oneDylanSentence);
 };
 
+const getOneDylanSong = (req, res) => {
+  const { id } = req.params;
+  const oneDylanSong = dylanSongsService.getAllDylanSongs().filter((item) => {
+    return item.id === id;
+  });
+  res.json(oneDylanSong);
+};
+
 module.exports = {
   getAllDylanSongs,
   getAllDylanSongsPaginated,
   getOneDylanSentence,
+  getOneDylanSong,
 };
