@@ -44,6 +44,16 @@ const { v4: uuid } = require("uuid");
       links.map((link) => link.href).slice(0, 2)
     );
 
+    const albumTitle = await page.$eval(
+      ".caption",
+      (content) => content.innerText
+    );
+
+    const fechaPublicacion = await page.$eval(
+      ".played a",
+      (content) => content.innerText
+    );
+
     try {
       if (text.length > 100 && title !== null) {
         lyrics.push({
@@ -51,6 +61,8 @@ const { v4: uuid } = require("uuid");
           lyrics: text,
           cover: imagen,
           album: albumUrl[0],
+          albumTitle: albumTitle,
+          fechaPublicacion: fechaPublicacion,
           id: uuid(),
         });
       }
